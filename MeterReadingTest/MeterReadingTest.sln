@@ -1,13 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI", "MeterAPI\MeterAPI.csproj", "{F7C46EA0-EEC4-4E6E-9537-E22A6A966264}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Tests", "MeterAPI.Tests\MeterAPI.Tests.csproj", "{A57A4B40-7A3B-4701-AA10-38469EE4AC62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Domain", "..\MeterAPI.Domain\MeterAPI.Domain.csproj", "{5F85ED18-912A-700F-CF10-75DEBDAA7C30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{11FFDEE7-EF88-4E73-B539-0B04787EE79C}"
+	ProjectSection(SolutionItems) = preProject
+		..\MeterReadings.mdf = ..\MeterReadings.mdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +30,10 @@ Global
 		{A57A4B40-7A3B-4701-AA10-38469EE4AC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A57A4B40-7A3B-4701-AA10-38469EE4AC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A57A4B40-7A3B-4701-AA10-38469EE4AC62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F85ED18-912A-700F-CF10-75DEBDAA7C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F85ED18-912A-700F-CF10-75DEBDAA7C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F85ED18-912A-700F-CF10-75DEBDAA7C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F85ED18-912A-700F-CF10-75DEBDAA7C30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
