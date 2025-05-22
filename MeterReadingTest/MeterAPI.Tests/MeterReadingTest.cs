@@ -8,17 +8,17 @@ namespace MeterAPI.Tests;
 
 public class Tests
 {
-    private Mock<ILogger<MeterReading>> _mockLogger;
+    private Mock<ILogger<Meter>> _mockLogger;
     private Mock<ICSVService> _mockCSVService;
 
-    private MeterReading _meterReading;
+    private Meter _meterReading;
 
     [SetUp]
     public void Setup()
     {
-        _mockLogger = new Mock<ILogger<MeterReading>>();
+        _mockLogger = new Mock<ILogger<Meter>>();
         _mockCSVService = new Mock<ICSVService>();
-        _meterReading = new MeterReading(_mockLogger.Object, _mockCSVService.Object);
+        _meterReading = new Meter(_mockLogger.Object, _mockCSVService.Object);
     }
 
     [Test]

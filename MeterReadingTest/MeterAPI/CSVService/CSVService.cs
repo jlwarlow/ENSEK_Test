@@ -29,7 +29,7 @@ public class CSVService : ICSVService
     }
 }
 
-internal class MeterReadingMap : ClassMap<Entities.MeterReading>
+internal class MeterReadingMap : ClassMap<Contracts.MeterReading>
 {
     public MeterReadingMap()
     {

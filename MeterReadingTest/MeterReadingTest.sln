@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Tests", "MeterAPI.Tests\MeterAPI.Tests.csproj", "{A57A4B40-7A3B-4701-AA10-38469EE4AC62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Domain", "..\MeterAPI.Domain\MeterAPI.Domain.csproj", "{5F85ED18-912A-700F-CF10-75DEBDAA7C30}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BF95EFD5-B8AE-4374-B17C-9C577C52EEB1}"
 	ProjectSection(SolutionItems) = preProject
 		..\MeterReadings.mdf = ..\MeterReadings.mdf
@@ -18,7 +16,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Processor", "MeterAPI.Processor\MeterAPI.Processor.csproj", "{F5EDF53F-8A91-44E8-8E20-0BCD3160BDC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Entities", "MeterAPI.Entities\MeterAPI.Entities.csproj", "{10FB4780-41C3-4EF1-A64D-3049EEB8AC90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Contracts", "MeterAPI.Contracts\MeterAPI.Contracts.csproj", "{65D2EF83-518A-9CFB-4D38-42541EDE3ADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Domain", "MeterAPI.Domain\MeterAPI.Domain.csproj", "{B6FA5BC0-7F99-1E87-57D0-8E348067B8FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,18 +34,18 @@ Global
 		{A57A4B40-7A3B-4701-AA10-38469EE4AC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A57A4B40-7A3B-4701-AA10-38469EE4AC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A57A4B40-7A3B-4701-AA10-38469EE4AC62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F85ED18-912A-700F-CF10-75DEBDAA7C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F85ED18-912A-700F-CF10-75DEBDAA7C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F85ED18-912A-700F-CF10-75DEBDAA7C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F85ED18-912A-700F-CF10-75DEBDAA7C30}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F5EDF53F-8A91-44E8-8E20-0BCD3160BDC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F5EDF53F-8A91-44E8-8E20-0BCD3160BDC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5EDF53F-8A91-44E8-8E20-0BCD3160BDC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5EDF53F-8A91-44E8-8E20-0BCD3160BDC5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10FB4780-41C3-4EF1-A64D-3049EEB8AC90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10FB4780-41C3-4EF1-A64D-3049EEB8AC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10FB4780-41C3-4EF1-A64D-3049EEB8AC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10FB4780-41C3-4EF1-A64D-3049EEB8AC90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65D2EF83-518A-9CFB-4D38-42541EDE3ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65D2EF83-518A-9CFB-4D38-42541EDE3ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65D2EF83-518A-9CFB-4D38-42541EDE3ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65D2EF83-518A-9CFB-4D38-42541EDE3ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6FA5BC0-7F99-1E87-57D0-8E348067B8FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6FA5BC0-7F99-1E87-57D0-8E348067B8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6FA5BC0-7F99-1E87-57D0-8E348067B8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6FA5BC0-7F99-1E87-57D0-8E348067B8FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

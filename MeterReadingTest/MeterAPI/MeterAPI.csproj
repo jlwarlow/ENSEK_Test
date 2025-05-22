@@ -27,8 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MeterAPI.Domain\MeterAPI.Domain.csproj" />
-    <ProjectReference Include="..\MeterAPI.Entities\MeterAPI.Entities.csproj" />
+    <ProjectReference Include="..\MeterAPI.Contracts\MeterAPI.Contracts.csproj" />
+    <ProjectReference Include="..\MeterAPI.Domain\MeterAPI.Domain.csproj" />
   </ItemGroup>
 
 </Project>
