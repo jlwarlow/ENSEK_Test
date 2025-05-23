@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Contracts", "Meter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterAPI.Domain", "MeterAPI.Domain\MeterAPI.Domain.csproj", "{B6FA5BC0-7F99-1E87-57D0-8E348067B8FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterReadingApp", "MeterReadingApp\MeterReadingApp.csproj", "{31D04C3C-C4A0-4339-84BB-A39C05F03034}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{B6FA5BC0-7F99-1E87-57D0-8E348067B8FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6FA5BC0-7F99-1E87-57D0-8E348067B8FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6FA5BC0-7F99-1E87-57D0-8E348067B8FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31D04C3C-C4A0-4339-84BB-A39C05F03034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31D04C3C-C4A0-4339-84BB-A39C05F03034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31D04C3C-C4A0-4339-84BB-A39C05F03034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31D04C3C-C4A0-4339-84BB-A39C05F03034}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

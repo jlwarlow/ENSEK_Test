@@ -14,11 +14,11 @@ namespace MeterAPI.Controllers
         private readonly IMeterReadingProcessor _readingProcessor = meterReadingProcessor;
 
         [HttpPost]
-        public async Task<ActionResult<PostMeterReadingsResponse>> PostMeterReadings([FromBody] IFormFileCollection file)
+        public async Task<ActionResult<PostMeterReadingsResponse>> PostMeterReadings([FromForm] IFormFile file)
         {
             try
             {
-                var result = _csvService.ReadCSV<Contracts.MeterReading>(file[0].OpenReadStream());
+                var result = _csvService.ReadCSV<Contracts.MeterReading>(file.OpenReadStream());
                 if (result.records.Count() == 0 && result.numBadRecords != 0)
                 {
                     return BadRequest(new { message = $"{result.numBadRecords} Bad records found out of {result.numBadRecords + result.records.Count()} Total Records" });

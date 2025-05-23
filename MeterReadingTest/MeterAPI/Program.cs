@@ -40,6 +40,7 @@ void ConfigureServices(IServiceCollection services, ConfigurationManager configu
 
     services.AddSingleton<ICSVService, CSVService>();
     services.AddScoped<IMeterReadingProcessor, MeterReadingProcessor>();
+    services.AddScoped<IMeterContext, MeterContext>();
 }
 static string GetExecutingAssemblyName()
 {

@@ -11,7 +11,7 @@ public class MeterReadingConfiguration : IEntityTypeConfiguration<MeterReading>
         // Table Name
         builder.ToTable("MeterReading");
 
-        builder.HasNoKey();
+        builder.HasKey(m => new {m.AccountId, m.MeterReadingDateTime});
 
         // Properties
         builder.Property(m => m.AccountId)

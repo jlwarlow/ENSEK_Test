@@ -17,47 +17,55 @@ public class MeterReadingProcessor : IMeterReadingProcessor
 
     public async Task<int> ProcessReadings(IEnumerable<Contracts.MeterReading> readings)
     {
-        int processedCount = 0;
-
-        foreach (var reading in readings)
+        try
         {
-            // Process each reading here
-            _logger.LogInformation($"Processing reading: {reading.MeterReadValue} for AccountId: {reading.AccountId}");
+            int processedCount = 0;
 
-            var account = await _meterContext.Accounts
-                .Where(a => a.AccountId == reading.AccountId)
-                .AsNoTracking()
-                .FirstOrDefaultAsync();
-
-            if (account == null)
+            foreach (var reading in readings)
             {
-                _logger.LogWarning($"Account with ID {reading.AccountId} not found. Skipping record.");
-                continue;
+                // Process each reading here
+                _logger.LogInformation($"Processing reading: {reading.MeterReadValue} for AccountId: {reading.AccountId}");
+
+                var account = await _meterContext.Accounts
+                    .Where(a => a.AccountId == reading.AccountId)
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync();
+
+                if (account == null)
+                {
+                    _logger.LogWarning($"Account with ID {reading.AccountId} not found. Skipping record.");
+                    continue;
+                }
+
+                var meterReading = await _meterContext.MeterReadings
+                    .Where(m => m.AccountId == reading.AccountId && m.MeterReadingDateTime == reading.MeterReadingDateTime)
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync();
+
+                if (meterReading != null)
+                {
+                    _logger.LogWarning($"Already have a meter reading for account {reading.AccountId} on {reading.MeterReadingDateTime}, skipping record");
+                    continue;
+                }
+
+                _meterContext.MeterReadings.Add(new Domain.Entities.MeterReading
+                {
+                    AccountId = reading.AccountId,
+                    MeterReadingDateTime = reading.MeterReadingDateTime,
+                    MeterReadValue = reading.MeterReadValue
+                });
+
+                _meterContext.SaveChanges();
+
+                processedCount++;
             }
-
-            var meterReading = await _meterContext.MeterReadings
-                .Where(m => m.AccountId == reading.AccountId && m.MeterReadingDateTime.CloseTo(reading.MeterReadingDateTime, 5))
-                .AsNoTracking()
-                .FirstOrDefaultAsync();
-
-            if (meterReading != null)
-            {
-                _logger.LogWarning($"Already have a meter reading for account {reading.AccountId} on {reading.MeterReadingDateTime}, skipping record");
-                continue;
-            }
-
-            _meterContext.MeterReadings.Add(new Domain.Entities.MeterReading
-            {
-                AccountId = reading.AccountId,
-                MeterReadingDateTime = reading.MeterReadingDateTime,
-                MeterReadValue = reading.MeterReadValue
-            });
-
-            _meterContext.SaveChanges();
-
-            processedCount++;
+            return processedCount;
+        }
+        catch(Exception e)
+        {
+            _logger.LogError(e, "An error occurred while processing meter readings: {Message}", e.Message);
+            throw;
         }
 
-        return processedCount;
     }
 }
