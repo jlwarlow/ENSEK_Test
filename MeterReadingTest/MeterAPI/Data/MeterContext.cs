@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace MeterAPI.Data;
 
-public class MeterContext : DbContext
+public class MeterContext : DbContext, IMeterContext
 {
     public MeterContext(DbContextOptions<MeterContext> options) : base(options)
     {

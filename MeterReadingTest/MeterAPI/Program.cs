@@ -1,6 +1,7 @@
 using MeterAPI;
 using MeterAPI.CSVService;
 using MeterAPI.Data;
+using MeterAPI.Processor;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -38,6 +39,7 @@ void ConfigureServices(IServiceCollection services, ConfigurationManager configu
             configuration.GetSqlConnectionString("MeterReadings", GetExecutingAssemblyName())));
 
     services.AddSingleton<ICSVService, CSVService>();
+    services.AddScoped<IMeterReadingProcessor, MeterReadingProcessor>();
 }
 static string GetExecutingAssemblyName()
 {

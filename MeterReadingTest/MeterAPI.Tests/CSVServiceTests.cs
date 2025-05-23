@@ -22,7 +22,7 @@ public class CSVServiceTests
         var stream = new MemoryStream(Encoding.UTF8.GetBytes(csvData));
         
         // Act
-        var (records, numBadRecords) = _csvService.ReadCSV<Entities.MeterReading>(stream);
+        var (records, numBadRecords) = _csvService.ReadCSV<Contracts.MeterReading>(stream);
         
         // Assert
         records.Should().HaveCount(1);
@@ -37,7 +37,7 @@ public class CSVServiceTests
         var stream = new MemoryStream(Encoding.UTF8.GetBytes(csvData));
 
         // Act
-        var (records, numBadRecords) = _csvService.ReadCSV<Entities.MeterReading>(stream);
+        var (records, numBadRecords) = _csvService.ReadCSV<Contracts.MeterReading>(stream);
 
         // Assert
         records.Should().HaveCount(1);
